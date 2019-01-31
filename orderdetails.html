@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Firebase App uvijek mora biti prva -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+
+    <!-- Dodatne usluge -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-database.js"></script>
+    <script src="js/db.js"></script>
+    <script>
+        function printContent(el) {
+            var restorepage = document.body.innerHTML;
+            var printcontent = document.getElementById(el).innerHTML;
+            document.body.innerHTML = printcontent;
+            window.print();
+            document.body.innerHTML = restorepage;
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images\icons\favicon_1.ico" type="image/png">
+    <link rel="icon" href="https://time2hack.com/favicon_1.png" type="image/png">
+    <title>Detalji narudžbe</title>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="css/orders.css">
+</head>
+
+<body>
+    <div id="loading"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-light logout">Odjaviti se</button>
+                <button type="button" class="btn btn-light back" onClick="history.back()">Natrag na sve narudžbe</button>
+                <div id="section-to-print" class="address">
+                    <br />
+                    <h2>Adresa dostave</h2>
+                    <table id="address" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Prezime</th>
+                                <th>Ulica</th>
+                                <th>Kućni broj</th>
+                                <th>Grad</th>
+                                <th>Kat</th>
+                                <th>Broj stana</th>
+                                <th>Broj telefona</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="section-to-print" class="orderItems">
+                    <br />
+                    <h2>Naručene stavke</h2>
+                    <table id="orderItems" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Vrsta jela</th>
+                                <th>Naziv jela</th>
+                                <th>Sastojci</th>
+                                <th>Količina</th>
+                                <th>Cijena</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" style="text-align:center;">
+            <br />
+            <div class="switch">
+                <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round-1 checkbox-1" type="checkbox">
+                <label for="cmn-toggle-1">Izvršena narudžba</label>
+            </div>
+            <button type="button" class="btn btn-light print" onClick="window.print()">Ispiši narudžbu</button>
+            <div><br /></div>
+        </div>
+    </div>
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="js/orderdetails.js"></script>
+</body>
+
+</html>

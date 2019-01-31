@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Firebase App uvijek mora biti prva -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+    <!-- Dodatne usluge -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-database.js"></script>
+    <script src="js/db.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images\icons\favicon_1.ico" type="image/png">
+    <link rel="icon" href="images\icons\favicon_1.ico" type="image/png">
+    <title>Narudžbe</title>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="css/orders.css">
+</head>
+
+<body>
+    <div id="loading"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                <h2 class="order-title">Narudžbe</h2>
+                <button type="button" class="btn btn-light logout">Odjaviti se</button>
+                <table id="showbooking" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Prezime naručitelja</th>
+                            <th>Datum narudžbe</th>
+                            <th>Dostava</th>
+                            <th>Izvršena narudžba</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Prezime naručitelja</th>
+                            <th>Datum narudžbe</th>
+                            <th>Dostava</th>
+                            <th>Izvršena narudžba</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div><br /></div>
+    </div>
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="js/orders.js"></script>
+</body>
+
+</html>
